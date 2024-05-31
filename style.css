@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+:root{
+
+    --Very_dark_blue: hsl(220, 13%, 13%);
+    --Dark_grayish_blue: hsl(219, 9%, 45%);
+    --Grayish_blue: hsl(220, 14%, 75%);
+    --Light_grayish_blue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%); /* (with 75% opacity for lightbox background) */
+
+    --Orange: hsl(26, 100%, 55%);
+    --Pale_orange: hsl(25, 100%, 94%);
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Kumbh Sans", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.header-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    height: 110px;
+    margin: 0 1rem;
+    border-bottom: 1px solid var(--Grayish_blue);
+}
+
+.header-cont .first {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+ul.lists {
+    display: flex;
+}
+
+ul.lists li {
+    position: relative;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    
+}
+
+ul.lists li:hover::before{
+width: 100%;
+}
+
+
+ul.lists li::before{
+position: absolute;
+content: "";
+bottom: 0;
+left: 0;
+height: 3px;
+width: 0%;
+background-color: var(--Orange);
+transition: 0.3s;
+}
+
+ul.lists li a{
+    color: var(--Dark_grayish_blue);
+}
+
+img.avatar{
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.profiles .icon-cont {
+    position:relative;
+}
+
+.profiles .icon-cont::before{
+    position: absolute;
+    content: "";
+    right: 0px;
+    top: -2;
+    background-color: var(--Orange);
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+}
+
+.profiles{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profiles img:hover{
+cursor: pointer;
+}
+
+
+img.avatar:hover{
+    border-color: var(--Orange);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 1100px;
+    gap: 8rem;
+    margin-top: 50px;
+}
+
+.wrap{
+    position: relative;
+    min-height: calc(100% - 110px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-images{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.preview-images .others-images{
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview-images .others-images .image{
+width: 100px;
+cursor: pointer;
+height: 100px;
+transition: 0.3s;
+}
+
+.preview-images .others-images .image img {
+    max-width: 100%;
+    border-radius: 10px;
+     
+}
+
+.preview-images .others-images .image:hover{
+    filter: opacity(0.4);
+}
+
+.preview-images .others-images .active{
+    border: 3px solid var(--Orange);
+    border-radius: 11px;
+}
+
+.preview-images .others-images .active img{
+    filter: opacity(0.4);
+}
+
+.container .preview-images .main-image{
+    width: 450px;
+    cursor: pointer;
+}
+
+.container .preview-images .main-image img{
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.container .info .company {
+    display: block;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--Dark_grayish_blue);
+    margin-bottom: 15px;
+}
+
+.container .info .title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.container .info .title:not(:first-of-type){
+    margin-bottom: 40px;
+}
+
+.container .info .text{
+    font-size: 16px;
+    color: var(--Dark_grayish_blue);
+    font-weight: 400;
+    margin-bottom: 30px;
+    width: 400px;
+}
+
+.container .info .price {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.container .info .discount{
+    color: var(--White);
+    background-color: var(--Very_dark_blue);
+    padding: 4px;
+    border-radius: 5px;
+    margin-left: 10px;
+    
+}
+
+
+.container .info .prev-price{
+    display: block;
+    margin: 16px 0;
+    color: var(--Dark_grayish_blue);
+    text-decoration: line-through;
+}
+
+.container .info .buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container .info .buttons .count{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 7px;
+    flex: 1;
+    background-color: var(--Light_grayish_blue);
+}
+
+.container .info .buttons .count .add{
+    display: flex;
+}
+
+.container .info .buttons .add-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--Black);
+    padding: 15px 0;
+    border-radius: 7px;
+    background-color: var(--Orange);
+    flex: 2;
+    cursor: pointer;
+    gap: 2px;
+}
+
+
+.container .info .buttons .add-cart svg{
+    fill: black;
+    margin-right: 10px;
+}
+
+.cart{
+    position: absolute;
+    padding: 20px;
+    background-color: var(--White);
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.1);
+    right: 150px;
+    top:0;
+    opacity: 0;
+    transition: 0.4s;
+    transform: translateY(30px);
+}
+
+.cart.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cart .shoplist .shop-img{
+width: 50px;
+height: 50px;
+border-radius: 10px;
+}
+
+.cart .cart-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cart hr {
+    margin-bottom: 20px;
+}
+
+.cart .shoplist{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cart .shoplist .shop-info p{
+    font-size: 13px;
+    color: var(--Dark_grayish_blue);
+}
+
+.cart .shoplist .shop-info .total-price {
+    color: var(--Black);
+    font-weight: 700;
+}
+
+.cart .checkout-btn {
+    width: 100%;
+    padding: 7px 0;
+    background-color: var(--Orange);
+    color: var(--Black);
+    border-radius: 7px;
+    border: none;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.no-items{
+    font-weight: bold;
+    margin: 50px;
+}
+
+@media screen and (max-width:814px) {
+ul.lists{
+    display: none;
+}
+}
+
+@media screen and (max-width:462px) {
+    .preview-images .others-images{
+        display: none;
+    }
+    .container .preview-images .main-image{
+        width: 100%;
+        margin: auto;
+    }
+
+    .container{
+        gap: 4rem;
+        
+    }
+
+    .header-cont{
+        width: 100%;
+    }
+
+    .container .info .title{
+        font-size: 30px;
+        
+    }
+
+    .wrap{
+        justify-content: unset;
+    }
+
+    }
