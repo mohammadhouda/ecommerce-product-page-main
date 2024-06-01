@@ -451,9 +451,11 @@ ul.lists{
 }
 
 @media screen and (max-width:462px) {
+    
     .preview-images .others-images{
         display: none;
     }
+
     .container .preview-images .main-image{
         width: 100%;
         margin: auto;
@@ -477,6 +479,18 @@ ul.lists{
     .wrap{
         margin: 10px;
         justify-content: unset;
+    }
+
+    .container .info .text{
+        width: 100%;
+        font-size: 5vw;
+    }
+    .container .info .title {
+        font-size: 9vw;
+    }
+
+    .preview-images{
+        margin-right: 10px;
     }
 
     }
