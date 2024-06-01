@@ -12,7 +12,15 @@ let price_string = document.querySelector(".price").textContent;
 let no_items = document.querySelector(".no-items");
 let notf = document.querySelector(".profiles div");
 let iconCart = document.querySelector(".icont-cart");
+let closeBtn = document.querySelector(".closeBtn");
+let mainImage = document.querySelector(".img .big-img img");
+let previousBtn = document.querySelector(".previous");
+let nextBtn = document.querySelector(".next");
+let other_imgg = document.querySelectorAll(".imgg");
+let preview_img_cart = document.querySelector(".preview-image-cart");
+let container = document.querySelector(".container");
 let price = price_string.replace("$", "");
+let count2 = 1;
 price = parseFloat(price).toFixed(2);
 
 let count = 0;
@@ -77,4 +85,40 @@ document.querySelector(".profiles").addEventListener("click", (e) => {
   if (e.target.classList.contains("icont-cart")) {
     cart.classList.toggle("active");
   }
+});
+
+nextBtn.addEventListener("click", (e) => {
+  count2++;
+  if (count2 <= 4) {
+    mainImage.setAttribute("src", `images/image-product-${count2}.jpg`);
+    other_imgg.forEach((img) => {
+      img.classList.remove("active");
+    });
+    other_imgg[count2 - 1].classList.add("active");
+  } else {
+    count2 = 4;
+  }
+});
+
+previousBtn.addEventListener("click", (e) => {
+  count2--;
+  if (count2 > 0) {
+    mainImage.setAttribute("src", `images/image-product-${count2}.jpg`);
+    other_imgg.forEach((img) => {
+      img.classList.remove("active");
+    });
+    other_imgg[count2 - 1].classList.add("active");
+  } else {
+    count2 = 1;
+  }
+});
+
+main_Img.addEventListener("click", () => {
+  preview_img_cart.classList.add("show");
+  container.classList.add("hide");
+});
+
+closeBtn.addEventListener("click", () => {
+  preview_img_cart.classList.remove("show");
+  container.classList.remove("hide");
 });
